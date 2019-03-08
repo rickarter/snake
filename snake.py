@@ -37,22 +37,7 @@ class Snake:
             self.head[1] = 0
 
     def fruit_eaten(self, fruits):
-
-        time.sleep(1)
-
-        snake = [[], []]
-        fruit = [[], []]
-
-        for i in range(self.head[0], self.head[0] + 11, 1):
-            for j in range(self.head[1], self.head[1] + 11, 1):
-                snake[0].append(i)
-                snake[1].append(j)
-
-        for i in range(fruits.X, fruits.X + 11, 1):
-            for j in range(fruits.Y, fruits.Y + 11, 1):
-                fruit[0].append(i)
-                fruit[1].append(j)
-
-        print(snake)
+        if fruits.X >= self.head[0] and fruits.X <= (self.head[0] + 10) and fruits.Y >= (self.head[1] - 10) and fruits.Y <= self.head[1]:
+            return fruits.change_position()
 
 

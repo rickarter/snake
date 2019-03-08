@@ -28,6 +28,7 @@ class Control:
                     elif not self.flag_pause:
                         self.flag_pause = True
         pygame.display.update()
+
     def on_pause(self):
         for event in pygame.event.get():
             if event.type == QUIT:

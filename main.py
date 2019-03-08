@@ -23,6 +23,7 @@ while control.flag_games:
         snake.animation()
 
         fruits.create_fruit(win)
+        snake.fruit_eaten(fruits)
 
     else:
         control.on_pause()
