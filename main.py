@@ -1,26 +1,28 @@
-import kivy
-from kivy.app import App
-from kivy.uix.widget import Widget
+import pygame
+from control import Control
+from snake import Snake
+from fruits import Fruits
 
-from kivy.config import Config
-Config.set('graphics', 'resizable', '0')
-Config.set('graphics', 'width', '410')
-Config.set('graphics', 'height', '410')
+pygame.init()
+win = pygame.display.set_mode((500, 500))
+pygame.display.set_caption(('Snake'))
 
-from kivy.graphics import (Color, Ellipse, Rectangle, Line)
-class SnakeDraw(Widget):
-    def __init__(self, **kwargs):
-        super(SnakeDraw, self).__init__(**kwargs)
+control = Control()
+snake = Snake()
+fruits = Fruits()
 
-        with self.canvas:
-            Color(0, 1, 0, 1)
-            Rectangle(pos = (250, 100), size = (50, 50))
+while control.flag_games:
+    if control.flag_pause:
+        pygame.time.delay(1)
+        control.control()
+        win.fill((0, 0, 0))
 
-class SnakeApp(App):
-    def build(self):
-        self.sd = SnakeDraw()
-        self.sd.canvas.ask_update()
-        return self.sd
+        snake.draw(win)
+        snake.move(control)
+        snake.transform()
+        snake.animation()
 
-if __name__ == '__main__':
-    SnakeApp().run()
+        fruits.create_fruit(win)
+
+    else:
+        control.on_pause()
