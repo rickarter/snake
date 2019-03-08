@@ -14,16 +14,17 @@ fruits = Fruits()
 while control.flag_games:
     if control.flag_pause:
         pygame.time.delay(1)
-        control.control()
+        control.control(win)
         win.fill((0, 0, 0))
+
+        fruits.create_fruit(win)
+        snake.fruit_eaten(fruits)
+
 
         snake.draw(win)
         snake.move(control)
         snake.transform()
         snake.animation()
-
-        fruits.create_fruit(win)
-        snake.fruit_eaten(fruits)
 
     else:
         control.on_pause()

@@ -7,7 +7,7 @@ class Control:
         self.flag_direction = 'RIGHT'
         self.flag_pause = True
 
-    def control(self):
+    def control(self, win):
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.flag_games = False
