@@ -15,16 +15,15 @@ while control.flag_games:
     if control.flag_pause:
 
         control.control()
-        win.fill((0, 0, 0))
 
         fruits.create_fruit(win)
-        snake.fruit_eaten(fruits)
-
 
         snake.draw(win)
         snake.move(control)
         snake.transform()
         snake.animation()
+        snake.fruit_eaten(fruits)
+        snake.eat_oneself()
 
     else:
         control.on_pause()

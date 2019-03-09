@@ -1,2 +1,2 @@
-# snake
-snakeGameOnKivy
+# Snake Game
+Snake game
