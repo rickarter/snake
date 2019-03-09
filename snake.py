@@ -4,7 +4,7 @@ import pygame
 class Snake:
     def __init__(self):
         self.head = [10, 10]
-        self.speed = 10
+        self.speed = 7
         self.body = [[10, 10]]
         self.width = 10
         self.height = 10
@@ -28,10 +28,10 @@ class Snake:
             pygame.draw.rect(win, (0, 255, 100), (segment[0], segment[1], self.width, self.height))
 
     def transform(self):
-        if self.head[0] >= 500:
-            self.head[0] = 0
-        elif self.head[0] <= 0:
+        if self.head[0] <= 0:
             self.head[0] = 490
+        elif self.head[0] >= 500:
+            self.head[0] = 0
         elif self.head[1] <= 0:
             self.head[1] = 490
         elif self.head[1] >= 500:
@@ -50,15 +50,9 @@ class Snake:
     def grow(self):
         self.body.append([-10, -10])
 
-    '''def body_count(self):
-        count = 0
-        for i in self.body:
-            count += 1
-        return count'''
-
     def eat_oneself(self):
         count = 0
         for i in self.body:
-            if i == self.head and count > 0:
-                print('Смерть')
+            if i == self.head and count != 0:
+                self.body = self.body[0:count:1]
             count += 1

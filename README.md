@@ -1,2 +1,2 @@
-# Snake Game
-Snake game
+# SNAKEGAME
+# DO USER INTERFACE

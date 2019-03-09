@@ -5,7 +5,7 @@ class Control:
     def __init__(self):
         self.flag_games = True
         self.flag_direction = 'RIGHT'
-        self.flag_pause = True
+        self.flag_pause = False
         self.timer = pygame.time.Clock()
 
     def control(self):

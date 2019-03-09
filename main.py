@@ -5,14 +5,14 @@ from fruits import Fruits
 
 pygame.init()
 win = pygame.display.set_mode((500, 500))
-pygame.display.set_caption(('Snake'))
+pygame.display.set_caption('Snake')
 
 control = Control()
 snake = Snake()
 fruits = Fruits()
 
 while control.flag_games:
-    if control.flag_pause:
+    if not control.flag_pause:
 
         control.control()
 
