@@ -6,8 +6,10 @@ class Control:
         self.flag_games = True
         self.flag_direction = 'RIGHT'
         self.flag_pause = True
+        self.timer = pygame.time.Clock()
 
-    def control(self, win):
+    def control(self):
+        self.timer.tick(60)
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.flag_games = False

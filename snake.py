@@ -49,6 +49,6 @@ class Snake:
                 return fruits.change_position()
 
     def grow(self):
-        self.body.append([45, 45])
+        self.body.append([-10, -10])
 
 

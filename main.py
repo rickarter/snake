@@ -13,8 +13,8 @@ fruits = Fruits()
 
 while control.flag_games:
     if control.flag_pause:
-        pygame.time.delay(1)
-        control.control(win)
+
+        control.control()
         win.fill((0, 0, 0))
 
         fruits.create_fruit(win)
