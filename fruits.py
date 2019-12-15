@@ -10,7 +10,7 @@ class Fruits:
         self.height = 10
 
     def create_fruit(self, win):
-        win.fill((0, 0, 0))
+        win.fill((80, 130, 252))
         pygame.draw.rect(win, (255, 0, 100), (self.X, self.Y, self.width, self.height))
 
     def change_position(self):

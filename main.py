@@ -18,6 +18,7 @@ while control.flag_games:
 
         fruits.create_fruit(win)
 
+        control.change_speed(snake)
         snake.draw(win)
         snake.move(control)
         snake.transform()

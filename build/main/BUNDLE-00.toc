@@ -1,0 +1,1 @@
+([('main', '/Volumes/LaCie/python/snake/dist/main', 'EXECUTABLE')],)

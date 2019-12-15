@@ -1,4 +1,5 @@
 import pygame
+
 from pygame.locals import *
 
 class Control:
@@ -41,3 +42,26 @@ class Control:
                         self.flag_pause = False
                     elif not self.flag_pause:
                         self.flag_pause = True
+
+    def change_speed(self, snake):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_1]:
+            snake.speed = 1
+        if keys[pygame.K_2]:
+            snake.speed = 2
+        if keys[pygame.K_3]:
+            snake.speed = 3
+        if keys[pygame.K_4]:
+            snake.speed = 4
+        if keys[pygame.K_5]:
+            snake.speed = 5
+        if keys[pygame.K_6]:
+            snake.speed = 6
+        if keys[pygame.K_7]:
+            snake.speed = 7
+        if keys[pygame.K_8]:
+            snake.speed = 8
+        if keys[pygame.K_9]:
+            snake.speed = 9
+        if keys[pygame.K_0]:
+            snake.speed = 10
